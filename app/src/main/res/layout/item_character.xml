@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.rafaellat.marvelgallery.view.views.SquareFrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="@dimen/element_padding">
+    <!--       -->
+
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/ic_launcher_round"
+            android:id="@+id/imageView"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:shadowColor="#111"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="0.01"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/standard_text_size"
+    />
+
+</com.example.rafaellat.marvelgallery.view.views.SquareFrameLayout>
