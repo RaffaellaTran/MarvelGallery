@@ -13,6 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        buildConfigField("String", "PUBLIC_KEY", "280c97bd7526e152be5f469c354fd4a5")
+//        buildConfigField("String", "PRIVATE_KEY", "00e0db131bb51aae7d4177a37dabffb32852a98a")
     }
     buildTypes {
         release {
@@ -31,6 +33,20 @@ dependencies {
     implementation "com.android.support:support-v4:$android_support_version"
     implementation "com.android.support:recyclerview-v7:$android_support_version"
     implementation "com.github.bumptech.glide:glide:$glide_version"
+    // RxJava
+   // implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+
+    // RxAndroid
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
