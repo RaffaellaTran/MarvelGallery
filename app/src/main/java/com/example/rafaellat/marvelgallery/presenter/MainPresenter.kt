@@ -1,5 +1,6 @@
 package com.example.rafaellat.marvelgallery.presenter
 
+import android.app.DownloadManager
 import com.example.rafaellat.marvelgallery.data.MarvelRepository
 import com.example.rafaellat.marvelgallery.data.applySchedulers
 import com.example.rafaellat.marvelgallery.data.plusAssign
@@ -17,12 +18,17 @@ class MainPresenter(val view: MainView, val repository: MarvelRepository) :
         loadCharacters()
     }
 
-    private fun loadCharacters() {
-        repository.getAllCharacters()
+    //inform the presenter that the text has been changed
+    fun onSearchChanged(text: String){
+        loadCharacters(text)
+
+    }
+    private fun loadCharacters(searchQuery: String? = null) {
+        repository.getAllCharacters(null)
             .applySchedulers()
             .subscribe({ items -> view.show(items) })
 
-        subscriptions += repository.getAllCharacters()
+        subscriptions += repository.getAllCharacters(searchQuery)
             .applySchedulers()
             .doOnSubscribe { view.refresh = true }
             .doFinally { view.refresh = false }

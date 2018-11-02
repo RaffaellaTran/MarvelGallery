@@ -8,6 +8,7 @@ import com.example.rafaellat.marvelgallery.data.MarvelRepository
 import com.example.rafaellat.marvelgallery.model.MarvelCharacter
 import com.example.rafaellat.marvelgallery.presenter.MainPresenter
 import com.example.rafaellat.marvelgallery.view.common.BaseActivityWithPresenter
+import com.example.rafaellat.marvelgallery.view.common.addOnTextChangedListener
 import com.example.rafaellat.marvelgallery.view.common.bindToSwipeRefresh
 import com.example.rafaellat.marvelgallery.view.common.toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +25,11 @@ class MainActivity : BaseActivityWithPresenter(),
         setContentView(R.layout.activity_main)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
         swipeRefreshView.setOnRefreshListener { presenter.onRefresh() } // pass events to the presenter using its methods
+        search_view.addOnTextChangedListener {
+            onTextChanged({text, _, _, _ ->
+                presenter.onSearchChanged(text)
+            })
+        }
         presenter.onViewCreated()
     }
 
