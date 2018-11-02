@@ -1,12 +1,11 @@
-package com.example.rafaellat.marvelgallery
+package com.example.rafaellat.marvelgallery.view.main
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.view.Window
+import com.example.rafaellat.marvelgallery.R
 import com.example.rafaellat.marvelgallery.model.MarvelCharacter
-import com.example.rafaellat.marvelgallery.view.main.CharacterItemAdapter
-import com.example.rafaellat.marvelgallery.view.main.MainListAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
