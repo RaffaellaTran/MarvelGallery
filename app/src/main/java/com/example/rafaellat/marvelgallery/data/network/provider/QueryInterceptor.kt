@@ -11,9 +11,9 @@ fun makeAddSecurityQueryInterceptor() = Interceptor { chain ->
 
     // Url customization: add query parameters
     val url = originalRequest.url().newBuilder()
-        .addQueryParameter("apikey", "280c97bd7526e152be5f469c354fd4a5") // 1
+        .addQueryParameter("apikey", BuildConfig.PUBLIC_KEY) // 1
         .addQueryParameter("ts", "$timeStamp") //device time in milliseconds. It is used to improve the security of the hash provided in the next query.
-            .addQueryParameter("hash", calculatedMd5(timeStamp.toString() + "00e0db131bb51aae7d4177a37dabffb32852a98a"+ "280c97bd7526e152be5f469c354fd4a5")) // 1
+            .addQueryParameter("hash", calculatedMd5(timeStamp.toString() + BuildConfig.PRIVATE_KEY+ BuildConfig.PUBLIC_KEY)) // 1
         .build()
 
     // Request customization: set custom url

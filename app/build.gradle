@@ -13,8 +13,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-//        buildConfigField("String", "PUBLIC_KEY", "280c97bd7526e152be5f469c354fd4a5")
-//        buildConfigField("String", "PRIVATE_KEY", "00e0db131bb51aae7d4177a37dabffb32852a98a")
+        buildConfigField("String", "PUBLIC_KEY", "\"280c97bd7526e152be5f469c354fd4a5\"")
+        buildConfigField("String", "PRIVATE_KEY", "\"00e0db131bb51aae7d4177a37dabffb32852a98a\"")
     }
     buildTypes {
         release {
