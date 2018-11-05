@@ -1,6 +1,5 @@
 package com.example.rafaellat.marvelgallery.presenter
 
-import android.app.DownloadManager
 import com.example.rafaellat.marvelgallery.data.MarvelRepository
 import com.example.rafaellat.marvelgallery.data.applySchedulers
 import com.example.rafaellat.marvelgallery.data.plusAssign
@@ -19,10 +18,11 @@ class MainPresenter(val view: MainView, val repository: MarvelRepository) :
     }
 
     //inform the presenter that the text has been changed
-    fun onSearchChanged(text: String){
+    fun onSearchChanged(text: String) {
         loadCharacters(text)
 
     }
+
     private fun loadCharacters(searchQuery: String? = null) {
         repository.getAllCharacters(null)
             .applySchedulers()
@@ -39,7 +39,7 @@ class MainPresenter(val view: MainView, val repository: MarvelRepository) :
 
 //        repository.getAllCharacters() //uses a network operation and it can't run on the main thread if we don't specify
 //            .subscribeOn(Schedulers.io()) // we specify that the network request should run in the IO thread
-//            .observeOn(AndroidSchedulers.mainThread()) //callbacks should be started on the main thread because we are changing the view in the call back
+//            .observeOn(AndroidSchedulers.mainThread()) //callbacks should be started on the main thread because we are changing the view in the callback
 //            .subscribe({ items -> view.show(items) })
     }
 }

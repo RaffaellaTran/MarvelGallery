@@ -12,5 +12,3 @@ interface MarvelRepository {
         override fun creator() = MarvelRepositoryImpl()
     }
 }
-
-

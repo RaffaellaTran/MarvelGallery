@@ -14,13 +14,13 @@ private fun makeRetrofit(): Retrofit = Retrofit.Builder()
     .baseUrl("http://gateway.marvel.com/v1/public/")
     .client(makeHttpClient())
     .addConverterFactory(GsonConverterFactory.create(Gson())) // Converter for JSON serialization and deserialization using the GSON
-.addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // add a converter for allowing RxJava2 types as observables for returnning values from network requests
+    .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // add a converter for allowing RxJava2 types as observables for returnning values from network requests
     .build()
 
 private fun makeHttpClient() = OkHttpClient.Builder()
     .connectTimeout(60, TimeUnit.SECONDS) // custom interceptior
-    .readTimeout(60, TimeUnit.SECONDS) // 4
+    .readTimeout(60, TimeUnit.SECONDS)
     .addInterceptor(makeHeadersInterceptor()) // add standard headers for each request
-    .addInterceptor(makeAddSecurityQueryInterceptor()) // 6
-    .addInterceptor(makeLoggingInterceptor()) // 7
+    .addInterceptor(makeAddSecurityQueryInterceptor())
+    .addInterceptor(makeLoggingInterceptor())
     .build()

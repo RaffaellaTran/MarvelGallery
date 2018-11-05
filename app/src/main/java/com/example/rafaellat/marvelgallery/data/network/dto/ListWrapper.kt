@@ -1,6 +1,6 @@
 package com.example.rafaellat.marvelgallery.data.network.dto
 
-//Liswt of occurences
+//List of occurences
 class ListWrapper<T> {
     var items: List<T> = listOf()
 }

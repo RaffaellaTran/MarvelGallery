@@ -12,10 +12,11 @@ class MarvelRepositoryImpl : MarvelRepository {
 
     override fun getAllCharacters(searchQuery: String?): Single<List<MarvelCharacter>> = api.getCharacters(
         offset = 0,
-        searchQuery =searchQuery,
+        searchQuery = searchQuery,
         limit = elementsOnListLimit
     ).map {
-        it.data?.results.orEmpty().map(::MarvelCharacter) //get a list of DTO elements and map it into MarvelCharacter using a constructor reference
+        it.data?.results.orEmpty()
+            .map(::MarvelCharacter) //get a list of DTO elements and map it into MarvelCharacter using a constructor reference
     }
 
     companion object {

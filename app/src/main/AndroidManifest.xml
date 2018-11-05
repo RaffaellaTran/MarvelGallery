@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".character.CharacterProfileActivity"
-        android:theme="@style/AppFullScreenTheme">
+                  android:theme="@style/AppFullScreenTheme">
         </activity>
     </application>
 

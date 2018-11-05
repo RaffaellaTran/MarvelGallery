@@ -12,8 +12,14 @@ fun makeAddSecurityQueryInterceptor() = Interceptor { chain ->
     // Url customization: add query parameters
     val url = originalRequest.url().newBuilder()
         .addQueryParameter("apikey", BuildConfig.PUBLIC_KEY) // 1
-        .addQueryParameter("ts", "$timeStamp") //device time in milliseconds. It is used to improve the security of the hash provided in the next query.
-            .addQueryParameter("hash", calculatedMd5(timeStamp.toString() + BuildConfig.PRIVATE_KEY+ BuildConfig.PUBLIC_KEY)) // 1
+        .addQueryParameter(
+            "ts",
+            "$timeStamp"
+        ) //device time in milliseconds. It is used to improve the security of the hash provided in the next query.
+        .addQueryParameter(
+            "hash",
+            calculatedMd5(timeStamp.toString() + BuildConfig.PRIVATE_KEY + BuildConfig.PUBLIC_KEY)
+        ) // 1
         .build()
 
     // Request customization: set custom url
@@ -30,7 +36,8 @@ fun makeAddSecurityQueryInterceptor() = Interceptor { chain ->
  * @param timeStamp Current timeStamp
  * @return MD5 hash string
  */
-fun calculatedMd5(text: String): String { val messageDigest = getMd5Digest(text)
+fun calculatedMd5(text: String): String {
+    val messageDigest = getMd5Digest(text)
     val md5 = BigInteger(1, messageDigest).toString(16)
     return "0" * (32 - md5.length) + md5 // 1
 }

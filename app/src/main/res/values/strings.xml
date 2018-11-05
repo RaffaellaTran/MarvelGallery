@@ -7,4 +7,9 @@
     <string name="occurrences_series_list_introduction">Series:</string>
     <string name="occurrences_stories_list_introduction">Stories:</string>
     <string name="occurrences_events_list_introduction">Events:</string>
+    <string name="description_text">This is some long text that will be visible as an character description.</string>
+    <string name="occurances_text">He was in following comics: * KOKOKO * KOKOKO * KOKOKO * KOKOKO * KOKOKO * KOKOKO *
+        KOKOKO * KOKOKO * KOKOKO * KOKOKO * KOKOKO
+    </string>
+    <string name="textview">TextView</string>
 </resources>

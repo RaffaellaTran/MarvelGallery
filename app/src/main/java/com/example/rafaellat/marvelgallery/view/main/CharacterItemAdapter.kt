@@ -12,7 +12,7 @@ import com.example.rafaellat.marvelgallery.view.common.loadImage
 
 class CharacterItemAdapter(
     val character: MarvelCharacter, // constructor
-    val clicked: (MarvelCharacter)-> Unit
+    val clicked: (MarvelCharacter) -> Unit
 ) : ItemAdapter<CharacterItemAdapter.ViewHolder>(R.layout.item_character) {
 
     override fun onCreateViewHolder(itemView: View) = ViewHolder(itemView)
@@ -20,12 +20,12 @@ class CharacterItemAdapter(
         // function in ItemAdapter and, thanks to that, we can now use textView and imageView explicitly inside its body.
 
         textView.text = character.name
-        imageView.loadImage(character.imageUrl) // 3
+        imageView.loadImage(character.imageUrl)
         itemView.setOnClickListener { clicked(character) }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textView by bindView<TextView>(R.id.textView) // binding properties to view elements
-        val imageView by bindView<ImageView>(R.id.imageView)
+        val textView by bindView<TextView>(R.id.text_view) // binding properties to view elements
+        val imageView by bindView<ImageView>(R.id.image_view)
     }
 }

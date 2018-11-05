@@ -54,7 +54,7 @@ class CharacterProfileActivity : AppCompatActivity() {
             transform =
             { " $bullet $it" }, separator = "\n"
         )
-        return this + "$introductionText\n$listText\n\n"
+        return this + "$introductionText \n $listText \n\n"
     }
 
     companion object {
