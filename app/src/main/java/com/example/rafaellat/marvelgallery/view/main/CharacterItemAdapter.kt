@@ -11,7 +11,8 @@ import com.example.rafaellat.marvelgallery.view.common.bindView
 import com.example.rafaellat.marvelgallery.view.common.loadImage
 
 class CharacterItemAdapter(
-    val character: MarvelCharacter // constructor
+    val character: MarvelCharacter, // constructor
+    val clicked: (MarvelCharacter)-> Unit
 ) : ItemAdapter<CharacterItemAdapter.ViewHolder>(R.layout.item_character) {
 
     override fun onCreateViewHolder(itemView: View) = ViewHolder(itemView)
@@ -20,6 +21,7 @@ class CharacterItemAdapter(
 
         textView.text = character.name
         imageView.loadImage(character.imageUrl) // 3
+        itemView.setOnClickListener { clicked(character) }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

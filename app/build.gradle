@@ -1,8 +1,12 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 apply plugin: 'kotlin-android-extensions'
+androidExtensions {
+    experimental = true
+}
 
 android {
     compileSdkVersion 28
@@ -36,8 +40,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$android_support_version"
     implementation "com.android.support:design:$android_support_version"
     implementation "com.android.support:recyclerview-v7:$android_support_version"
-            // RxJava
-   // implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    // RxJava
+    // implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
 
     // RxAndroid
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
@@ -49,6 +53,10 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
+    //Activity starter
+    implementation 'com.github.marcinmoskala.activitystarter:activitystarter:1.11-beta'
+    implementation 'com.github.marcinmoskala.activitystarter:activitystarter-kotlin:1.11-beta'
+    kapt 'com.github.marcinmoskala.activitystarter:activitystarter-compiler:1.11-beta'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
