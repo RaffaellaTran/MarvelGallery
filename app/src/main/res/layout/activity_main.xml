@@ -27,7 +27,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/hintsearch"/>
+                android:hint="@string/hintsearch"
+                android:inputType="text"
+                />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.v4.widget.SwipeRefreshLayout
