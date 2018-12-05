@@ -20,16 +20,10 @@ class MainPresenterTest {
     // to make everything run on the same thread
     @Before
     fun setUp() {
-        RxAndroidPlugins.setInitMainThreadSchedulerHandler {
-            Schedulers.trampoline()
-        }
+        RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
         RxJavaPlugins.setIoSchedulerHandler { Schedulers.trampoline() }
-        RxJavaPlugins.setComputationSchedulerHandler {
-            Schedulers.trampoline()
-        }
-        RxJavaPlugins.setNewThreadSchedulerHandler {
-            Schedulers.trampoline()
-        }
+        RxJavaPlugins.setComputationSchedulerHandler { Schedulers.trampoline() }
+        RxJavaPlugins.setNewThreadSchedulerHandler { Schedulers.trampoline() }
     }
 
     @Test
